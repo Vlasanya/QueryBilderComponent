@@ -1,0 +1,206 @@
+
+.queryBuilder {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.ruleGroup-header,
+.rule {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.queryBuilder input,
+.queryBuilder select,
+.queryBuilder textarea {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    padding: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+    color: #333;
+}
+
+.queryBuilder input:focus,
+.queryBuilder select:focus,
+.queryBuilder textarea:focus {
+    border-bottom: 2px solid #007bff;
+}
+
+.queryBuilder .close-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.queryBuilder .close-button:hover {
+    color: #ff0000;
+}
+
+.queryBuilder .ruleGroup {
+    margin-bottom: 12px;
+    /* border: 1px solid #ccc;
+    border-left: 2px dashed #ccc; */
+    border: none;
+    padding-left: 16px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px; */
+}
+
+/* .queryBuilder .ruleGroup .rule {
+    margin-bottom: 8px;
+} */
+
+.queryBuilder .ruleGroup .rule:last-child {
+    margin-bottom: 0;
+}
+.queryBuilder .rule {
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 2px 4px rgba(13, 13, 13, 0.1);
+    /* border-radius: 4px; */
+    padding: 8px;
+    background-color: #fff;
+}
+
+.queryBuilder .addRule,
+.queryBuilder .addGroup {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.queryBuilder .addRule:hover,
+.queryBuilder .addGroup:hover {
+    background-color: #0056b3;
+}
+
+
+.queryBuilder .ruleGroup-combinators {
+    display: flex;
+    /* border: 1px solid #ccc;
+    border-radius: 4px; */
+    overflow: hidden;
+    color: #333;
+}
+
+.queryBuilder .ruleGroup-combinators button {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: #fff; 
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.queryBuilder .ruleGroup-combinators button.active {
+    background-color: #007bff;
+    color: #333;
+}
+
+.queryBuilder .ruleGroup-combinators button:not(.active):hover {
+    background-color: #f0f0f0;
+}
+
+/* .queryBuilder .rule-remove,
+.queryBuilder .ruleGroup-remove {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+}
+
+.queryBuilder .rule-remove:hover {
+    color: #0056b3;
+} */
+
+.queryBuilder .ruleGroup-addRule,
+.queryBuilder .ruleGroup-addGroup {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.queryBuilder .ruleGroup-addRule:hover,
+.queryBuilder .ruleGroup-addGroup:hover {
+    color: #007bff;
+}
+.queryBuilder .ruleGroup {
+    margin-left: 16px;
+}
+
+.queryBuilder .ruleGroup[data-level="0"] {
+    margin-left: 0;
+}
+
+.combinator-button {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 75px;
+    height: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .half-button {
+    flex: 1;
+    background-color: #f8f9fa;
+    border: none;
+    color: #333; 
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    line-height: 20px; 
+  }
+  
+  .half-button.active {
+    background-color: #007bff; 
+    color: white; 
+  }
+  
+  .half-button:not(.active):hover {
+    background-color: #e9ecef; 
+    color: #000;
+  }
+  
+button.MuiButton-root.MuiButton-contained.MuiButton-containedSecondary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.MuiButton-colorSecondary {
+    border-radius: unset;         
+    transition: unset;            
+    color: unset;                 
+    background-color: unset;      
+    box-shadow: unset;            
+  }
+  
+  button.MuiButton-root.MuiButton-contained.MuiButton-containedSecondary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.MuiButton-colorSecondary .MuiTouchRipple-root {
+    box-shadow: unset;            
+    background-color: unset;      
+  }
+  
