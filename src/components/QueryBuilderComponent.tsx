@@ -10,8 +10,7 @@ import {
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { QueryBuilderMaterial } from "@react-querybuilder/material";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import { IconButton, Typography } from "@mui/material";
-// import { defaultOperators, toFullOption } from 'react-querybuilder';
+import { IconButton, Typography, Box } from "@mui/material";
 import { ConditionModel } from "../App";
 import "../styles/queryBuilder.css";
 
@@ -33,6 +32,8 @@ const QueryBuilderComponentMUI: React.FC<QueryBuilderComponentMUIProps> = ({
     rules: [],
   });
   const [validation, setValidation] = useState<ValidationMap>({});
+  const [transformedConditionModel, setTransformedConditionModel] =
+    useState<ConditionModel | null>(null);
 
   useEffect(() => {
     if (rule) {
@@ -91,10 +92,13 @@ const QueryBuilderComponentMUI: React.FC<QueryBuilderComponentMUIProps> = ({
     } else {
       setValidation({});
     }
-  
-    const transformedConditionModel = transformToConditionModel(newQuery, columnData);
-    console.log('Transformed Condition Model:', transformedConditionModel);
-  };  
+
+    const transformedConditionModel = transformToConditionModel(
+      newQuery,
+      columnData
+    );
+    setTransformedConditionModel(transformedConditionModel);
+  };
 
   const fields = columnData.map((column) => ({
     name: column.field,
@@ -265,8 +269,27 @@ const QueryBuilderComponentMUI: React.FC<QueryBuilderComponentMUIProps> = ({
           )
         )}
       </div>
-
-      <pre>{JSON.stringify(query, null, 2)}</pre>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          alighItems: "center",
+          width: "100%",
+          mt: 2,
+          p: 2,
+        }}
+      >
+        <Box sx={{ flex: 1 }}>
+          <Typography>Query model</Typography>
+          <pre>{JSON.stringify(query, null, 2)}</pre>
+        </Box>
+        <Box sx={{ flex: 1 }}>
+          <Typography>Transformed condition model</Typography>
+          <pre style={{ flex: 1 }}>
+            {JSON.stringify(transformedConditionModel, null, 2)}
+          </pre>
+        </Box>
+      </Box>
     </div>
   );
 };
